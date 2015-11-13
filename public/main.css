@@ -1,0 +1,31 @@
+form {
+  background: #000;
+  bottom: 0;
+  padding: 3px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+form input[type=text] {
+  border: 0;
+  padding: 10px;
+  width: calc(100% - 110px);
+}
+form input[type=submit] {
+  background: rgb(130, 224, 255);
+  border: none;
+  padding: 10px;
+  width: 100px;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#messages li {
+  padding: 5px 10px;
+}
+#messages li:nth-child(odd) {
+  background: #eee;
+}

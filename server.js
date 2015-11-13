@@ -1,7 +1,7 @@
 // require express and other modules
 var express = require('express'),
     app = express(),
-    http = require('http').Server(app),
+    http = require('http').Server(app), // node http server
     bodyParser = require('body-parser'),
     io = require('socket.io')(http);
 
@@ -25,8 +25,9 @@ app.get('/', function (req, res) {
 io.on('connection', function (socket) {
   console.log('user connected');
 
+  // receive and broadcast chat messages
   socket.on('chat message', function (msg) {
-    console.log('message: ' + msg);
+    console.log('message:', msg);
     io.emit('chat message', msg);
   });
   
@@ -37,6 +38,6 @@ io.on('connection', function (socket) {
 
 
 // listen on port 3000
-http.listen(3000, function() {
+http.listen(3000, function() { // node http server
   console.log('server started');
 });
